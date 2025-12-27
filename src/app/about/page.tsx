@@ -46,26 +46,26 @@ export const dynamic = 'force-dynamic';
 const CONTACT_LINKS = [
   {
     name: "Email",
-    content: "dev.huzaif@gmail",
-    href: "mailto:dev.huzaif@gmail.com",
+    content: "rajalingammuthiah2011@gmail",
+    href: "mailto:rajalingammuthiah2011@gmail.com",
     icon: <FaEnvelope height={"50px"} />,
   },
   {
     name: "Phone",
-    content: "1234567890",
-    href: "tel:1234567890",
+    content: "9920580660",
+    href: "tel:9920580660",
     icon: <FaPhone height={"50px"} />,
   },
   {
     name: "LinkedIn",
-    href: "https://www.linkedin.com/in/huzaifahmedz",
-    content: "/huzaifahmedz",
+    href: "https://www.linkedin.com/in/rajalingam-muthiah-01ab561a9/",
+    content: "/rajalingam-muthiah-01ab561a9",
     icon: <FaLinkedin height={"50px"} />,
   },
   {
     name: "GitHub",
-    href: "https://github.com/huzaifahmedz",
-    content: "/huzaifahmedz",
+    href: "https://github.com/RajalingamMuthiah",
+    content: "/RajalingamMuthiah",
     icon: <FaGithub height={"50px"} />,
   },
 ];
@@ -254,9 +254,9 @@ function Page() {
                 />
               </div>
               <div className="flex flex-col gap-3 lg:items-center ml-10 md:ml-20 lg:ml-0">
-                <p className="text-center text-xl">Huzaif Ahmed</p>
+                <p className="text-center text-xl">Rajalingam Muthiah</p>
                 <div className="text-xs bg-zinc-700 w-fit px-3 py-1 rounded-full">
-                  Web Developer
+                  Frontend Developer
                 </div>
               </div>
             </div>
@@ -290,16 +290,19 @@ function Page() {
           >
             <h1 className="text-3xl mb-10 lg:md-20">About me</h1>
             <p className="mb-10 text-roboto">
-              Hey there! I&apos;m Huzaif, a Fullstack developer passionate about
-              creating meaningful digital experiences. With great in Web
-              development, I thrive on turning ideas into reality through coding
+              Hey there! I&apos;m Rajalingam, a Frontend developer passionate about
+              creating meaningful digital experiences and Data Analyst with a strong
+              foundation in Python, SQL, Machine Learning, Artificial Intelligence and
+              data visualization. I thrive on turning ideas into reality through coding
               and design. My journey began with a fascination for technology and
               a drive to make a positive impact.
             </p>
             <p className="mb-10">
-              When I&apos;m not coding, you can find me [Your
-              Interests/Hobbies], exploring new technologies, or sipping coffee
-              while brainstorming my next project.
+              When I&apos;m not coding, not working with data or code,
+              you&apos;ll find me teaching and mentoring students, 
+              exploring emerging technologies in data science and cloud
+              computing, or enjoying a cup of coffee while planning 
+              my next learning or project milestone.
             </p>
             <h1 className="text-3xl mb-10 lg:md-20">Stuff I use</h1>
             <div className="mb-5">
