@@ -232,6 +232,36 @@ const PROJECT_SKILLS = {
       </span>
     ),
   },
+  bootstrap: {
+    title: "Bootstrap",
+    bg: "black",
+    fg: "white",
+    icon: (
+      <span className="font-semibold" aria-label="Bootstrap">
+        BS
+      </span>
+    ),
+  },
+  Dialogflow: {
+    title: "Dialogflow",
+    bg: "black",
+    fg: "white",
+    icon: (
+      <span className="font-semibold" aria-label="Dialogflow">
+        DF
+      </span>
+    ),
+  },
+  php: {
+    title: "PHP",
+    bg: "black",
+    fg: "white",
+    icon: (
+      <span className="font-semibold" aria-label="PHP">
+        PHP
+      </span>
+    ),
+  },
 };
 export type Project = {
   id: string;
@@ -344,103 +374,95 @@ const projects: Project[] = [
       );
     },
   },
-  // {
-  //   id: "collab-whiteboard",
-  //   category: "Collaboration",
-  //   title: "SyncBoard",
-  //   src: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop",
-  //   screenshots: ["1.png", "2.png", "3.png"],
-  //   live: "https://syncboard-demo.vercel.app",
-  //   github: "https://github.com/dummy/syncboard",
-  //   skills: {
-  //     frontend: [
-  //       PROJECT_SKILLS.ts,
-  //       PROJECT_SKILLS.next,
-  //       PROJECT_SKILLS.react,
-  //       PROJECT_SKILLS.tailwind,
-  //       PROJECT_SKILLS.framerMotion,
-  //     ],
-  //     backend: [
-  //       PROJECT_SKILLS.node,
-  //       PROJECT_SKILLS.sockerio,
-  //       PROJECT_SKILLS.mongo,
-  //       PROJECT_SKILLS.express,
-  //     ],
-  //   },
-  //   get content() {
-  //     return (
-  //       <div>
-  //         <TypographyP className="font-mono ">
-  //           SyncBoard is a real-time collaborative whiteboard that brings teams
-  //           together across infinite canvas space. Draw, sketch, add sticky notes,
-  //           and collaborate seamlessly with cursor tracking, live cursors, and
-  //           conflict-free synchronized editing. Perfect for brainstorming, design
-  //           sessions, and remote collaboration.
-  //         </TypographyP>
-  //         <ProjectsLinks live={this.live} repo={this.github} />
-  //         <SlideShow
-  //           images={[
-  //             "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop",
-  //             "https://images.unsplash.com/photo-1557683316-973673baf926?w=800&h=600&fit=crop",
-  //           ]}
-  //         />
-  //         <TypographyH3 className="my-4 mt-8">Real-Time Collaboration</TypographyH3>
-  //         <p className="font-mono mb-2">
-  //           See what others are drawing in real-time with sub-100ms latency.
-  //           Built on operational transformation algorithms for smooth multi-user
-  //           editing. Zoom infinitely, pan seamlessly, and never lose your work.
-  //         </p>
-  //       </div>
-  //     );
-  //   },
-  // },
-  // {
-  //   id: "vr-visualizer",
-  //   category: "XR & Visualization",
-  //   title: "DimensionVR",
-  //   src: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=600&fit=crop",
-  //   screenshots: ["1.png"],
-  //   live: "https://dimension-vr-demo.vercel.app",
-  //   skills: {
-  //     frontend: [
-  //       PROJECT_SKILLS.ts,
-  //       PROJECT_SKILLS.next,
-  //       PROJECT_SKILLS.react,
-  //       PROJECT_SKILLS.spline,
-  //       PROJECT_SKILLS.tailwind,
-  //     ],
-  //     backend: [
-  //       PROJECT_SKILLS.node,
-  //       PROJECT_SKILLS.postgres,
-  //       PROJECT_SKILLS.prisma,
-  //     ],
-  //   },
-  //   get content() {
-  //     return (
-  //       <div>
-  //         <TypographyP className="font-mono ">
-  //           DimensionVR is a browser-based 3D visualization platform that transforms
-  //           data into immersive virtual experiences. Explore datasets in 3D space,
-  //           manipulate models with hand tracking, and share VR sessions with teammates.
-  //           No headset required—works in WebXR for desktop, mobile, and VR headsets.
-  //         </TypographyP>
-  //         <ProjectsLinks live={this.live} repo={this.github} />
-  //         <SlideShow
-  //           images={[
-  //             "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=600&fit=crop",
-  //             "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=600&fit=crop",
-  //           ]}
-  //         />
-  //         <TypographyH3 className="my-4 mt-8">WebXR Integration</TypographyH3>
-  //         <p className="font-mono mb-2">
-  //           Experience your data in true 3D. Import 3D models, visualize point clouds,
-  //           and interact with spatial data using WebXR APIs. Works seamlessly across
-  //           all devices with graceful fallbacks for non-VR environments.
-  //         </p>
-  //       </div>
-  //     );
-  //   },
-  // },
+  {
+    id: "collab-whiteboard",
+    category: "Confidential",
+    title: "AyuSangam---fitness-health-tracker-demo",
+    src: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop",
+    screenshots: ["1.png", "2.png", "3.png"],
+    live: "https://github.com/RajalingamMuthiah/AyuSangam---fitness-health-tracker-demo.git",
+    github: "https://github.com/RajalingamMuthiah/AyuSangam---fitness-health-tracker-demo.git",
+    skills: {
+      frontend: [
+        PROJECT_SKILLS.ts,
+        PROJECT_SKILLS.next,
+        PROJECT_SKILLS.react,
+        PROJECT_SKILLS.tailwind,
+        PROJECT_SKILLS.bootstrap,
+      ],
+      backend: [
+        PROJECT_SKILLS.node,
+        PROJECT_SKILLS.Dialogflow,
+        PROJECT_SKILLS.mongo,
+        PROJECT_SKILLS.express,
+      ],
+    },
+    get content() {
+      return (
+        <div>
+          <TypographyP className="font-mono ">
+            FastAPI | PostgreSQL | Wearable Integration Gym workout tracker with HRV/RHR/sleep
+            analytics from Whoop/Garmin wearables. 
+            Real-time progress dashboards. 
+            🔒 Personal Project - Live demo available on request some of the file is uploaded in github for ur reference
+          </TypographyP>
+          <ProjectsLinks live={this.live} repo={this.github} />
+          <SlideShow
+            images={[
+              "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop",
+              "https://images.unsplash.com/photo-1557683316-973673baf926?w=800&h=600&fit=crop",
+            ]}
+          />
+          <TypographyH3 className="my-4 mt-8">Real-Time Collaboration</TypographyH3>
+          <p className="font-mono mb-2">
+            🔒 Personal Project - Live demo available on request some of the file is uploaded in github for ur reference
+          </p>
+        </div>
+      );
+    },
+  },
+  {
+    id: "vr-visualizer",
+    category: "Confidential",
+    title: "external-examiner-management-system-demo",
+    src: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=600&fit=crop",
+    screenshots: ["1.png"],
+    live: "https://github.com/RajalingamMuthiah/external-examiner-management-system-demo.git",
+    github: "https://github.com/RajalingamMuthiah/external-examiner-management-system-demo.git",
+    skills: {
+      frontend: [
+        PROJECT_SKILLS.ts,
+        PROJECT_SKILLS.next,
+        PROJECT_SKILLS.react,
+        PROJECT_SKILLS.spline,
+        PROJECT_SKILLS.tailwind,
+      ],
+      backend: [
+        PROJECT_SKILLS.node,
+        PROJECT_SKILLS.php,
+      ],
+    },
+    get content() {
+      return (
+        <div>
+          <TypographyP className="font-mono ">
+            PHP | MySQL | Multi-Role Dashboards Educational platform with Admin/Principal/Teacher/VP/HOD dashboards for exam scheduling and examiner assignment. 🔒 personal Confidential - Demo available on request someof the demo file has been uploaded to this github
+          </TypographyP>
+          <ProjectsLinks live={this.live} repo={this.github} />
+          <SlideShow
+            images={[
+              "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=600&fit=crop",
+              "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=600&fit=crop",
+            ]}
+          />
+          <TypographyH3 className="my-4 mt-8">WebXR Integration</TypographyH3>
+          <p className="font-mono mb-2">
+            🔒 Personal Project - Live demo available on request some of the file is uploaded in github for ur reference
+          </p>
+        </div>
+      );
+    },
+  }
   // {
   //   id: "neural-playground",
   //   category: "AI & ML",

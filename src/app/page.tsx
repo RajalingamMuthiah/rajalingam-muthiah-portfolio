@@ -9,7 +9,6 @@ import ProjectsSection from "@/components/sections/projects";
 import ContactSection from "@/components/sections/contact";
 import HeroSection from "@/components/sections/hero";
 import ExperienceSection from "@/components/sections/experience";
-import TechnicalExpertiseSection from "@/components/sections/technicalExpertise";
 import EducationSection from "@/components/sections/education";
 
 // Mark as dynamic to prevent static generation timeout with Spline
@@ -27,7 +26,6 @@ function MainPage() {
           <SkillsSection />
           <ProjectsSection />
           <ExperienceSection />
-          <TechnicalExpertiseSection />
           <EducationSection />
           <ContactSection />
         </main>

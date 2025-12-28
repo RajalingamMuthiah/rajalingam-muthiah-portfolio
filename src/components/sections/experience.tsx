@@ -72,7 +72,7 @@ const ExperienceSection = () => {
               {/* Content */}
               <div className="relative space-y-2 z-5">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-                  <h3 className="text-2xl md:text-3xl font-bold text-white drop-shadow-lg">
+                  <h3 className="text-[22px] md:text-[22px] font-bold text-white drop-shadow-lg">
                     {exp.jobTitle}
                   </h3>
                   <span className="text-sm font-semibold text-gray-100 drop-shadow-md uppercase tracking-wide">
