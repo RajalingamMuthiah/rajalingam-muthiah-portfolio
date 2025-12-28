@@ -8,6 +8,7 @@ import Header from "@/components/header/header";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Footer from "@/components/footer/footer";
+import ResumeButton from "@/components/ResumeButton";
 import Script from "next/script";
 import Preloader from "@/components/preloader";
 import EasterEggs from "@/components/easter-eggs";
@@ -83,6 +84,8 @@ export default function RootLayout({
                 <Header />
                 {children}
                 <Footer />
+                {/* Fixed Resume Button (animated) */}
+                <ResumeButton />
               </TooltipProvider>
             </SocketContextProvider>
             <Toaster />

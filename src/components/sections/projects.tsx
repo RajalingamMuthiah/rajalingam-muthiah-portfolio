@@ -43,20 +43,23 @@ const Modall = ({ project }: { project: Project }) => {
       <Modal>
         <ModalTrigger className="bg-transparent flex justify-center group/modal-btn">
           <div
-            className="relative w-[400px] h-auto rounded-lg overflow-hidden"
+            className="relative w-[400px] h-auto rounded-lg overflow-hidden shadow-lg"
             style={{ aspectRatio: "3/2" }}
           >
             <Image
-              className="absolute w-full h-full top-0 left-0 hover:scale-[1.05] transition-all"
+              className="absolute w-full h-full top-0 left-0 hover:scale-[1.05] transition-all brightness-75"
               src={project.src}
               alt={project.title}
               width={300}
               height={300}
             />
-            <div className="absolute w-full h-1/2 bottom-0 left-0 bg-gradient-to-t from-black via-black/85 to-transparent pointer-events-none">
-              <div className="flex flex-col h-full items-start justify-end p-6">
-                <div className="text-lg text-left">{project.title}</div>
-                <div className="text-xs bg-white text-black rounded-lg w-fit px-2">
+            {/* Enhanced Overlay with better text readability */}
+            <div className="absolute w-full h-full bottom-0 left-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent pointer-events-none">
+              <div className="flex flex-col h-full items-start justify-end p-6 relative z-10">
+                <h3 className="text-xl font-bold text-white drop-shadow-lg mb-2">
+                  {project.title}
+                </h3>
+                <div className="text-xs font-semibold bg-white/90 dark:bg-black/80 text-slate-900 dark:text-white rounded-lg w-fit px-3 py-1 backdrop-blur-sm drop-shadow-md">
                   {project.category}
                 </div>
               </div>
@@ -89,12 +92,12 @@ export default ProjectsSection;
 const ProjectContents = ({ project }: { project: Project }) => {
   return (
     <>
-      <h4 className="text-lg md:text-2xl text-neutral-600 dark:text-neutral-100 font-bold text-center mb-8">
+      <h4 className="text-lg md:text-3xl text-slate-900 dark:text-white font-bold text-center mb-8 drop-shadow-lg">
         {project.title}
       </h4>
       <div className="flex flex-col md:flex-row md:justify-evenly max-w-screen overflow-hidden md:overflow-visible">
         <div className="flex flex-row md:flex-col-reverse justify-center items-center gap-2 text-3xl mb-8">
-          <p className="text-sm mt-1 text-neutral-600 dark:text-neutral-500">
+          <p className="text-sm mt-1 font-semibold text-slate-700 dark:text-slate-300 drop-shadow-md">
             Frontend
           </p>
           {project.skills.frontend?.length > 0 && (
@@ -103,7 +106,7 @@ const ProjectContents = ({ project }: { project: Project }) => {
         </div>
         {project.skills.backend?.length > 0 && (
           <div className="flex flex-row md:flex-col-reverse justify-center items-center gap-2 text-3xl mb-8">
-            <p className="text-sm mt-1 text-neutral-600 dark:text-neutral-500">
+            <p className="text-sm mt-1 font-semibold text-slate-700 dark:text-slate-300 drop-shadow-md">
               Backend
             </p>
             <FloatingDock items={project.skills.backend} />
@@ -139,7 +142,9 @@ const ProjectContents = ({ project }: { project: Project }) => {
           </motion.div>
         ))}
       </div> */}
-      {project.content}
+      <div className="prose dark:prose-invert max-w-none">
+        {project.content}
+      </div>
     </>
   );
 };

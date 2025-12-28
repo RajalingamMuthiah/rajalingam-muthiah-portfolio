@@ -14,16 +14,18 @@ export enum SkillNames {
   MONGODB = "mongodb",
   GIT = "git",
   GITHUB = "github",
-  PRETTIER = "prettier",
+ 
   NPM = "npm",
   FIREBASE = "firebase",
   WORDPRESS = "wordpress",
   LINUX = "linux",
   DOCKER = "docker",
-  NGINX = "nginx",
   AWS = "aws",
   VIM = "vim",
   VERCEL = "vercel",
+  OPENCV = "opencv",
+  POWERBI = "powerbi",
+  PYTHON = "python",
 }
 export type Skill = {
   id: number;
@@ -150,13 +152,13 @@ using use = useUsing("use")`,
     color: "#000000",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
   },
-  [SkillNames.PRETTIER]: {
+  [SkillNames.PYTHON]: {
     id: 15,
-    name: "prettier",
-    label: "Prettier",
+    name: "python",
+    label: "Python",
     shortDescription: "making your code not a whole mess, thank u next 🧹✨",
     color: "#f7b93a",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prettier/prettier-original.svg",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
   },
   [SkillNames.NPM]: {
     id: 16,
@@ -199,13 +201,13 @@ using use = useUsing("use")`,
     color: "#2496ed",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
   },
-  [SkillNames.NGINX]: {
+  [SkillNames.POWERBI]: {
     id: 21,
-    name: "nginx",
-    label: "NginX",
+    name: "powerbi",
+    label: "PowerBI",
     shortDescription: "reverse proxy go zoom zoom, sheesh! 🚗💨",
     color: "#008000",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg",
+    icon: "https://img.icons8.com/color/96/power-bi.png",
   },
   [SkillNames.AWS]: {
     id: 22,
@@ -232,6 +234,14 @@ using use = useUsing("use")`,
       "The triangle compony, helps you deploy and go touch grass! 🚀🌿",
     color: "#6cc24a",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg",
+  },
+  [SkillNames.OPENCV]: {
+    id: 25,
+    name: "opencv",
+    label: "OpenCV",
+    shortDescription: "computer vision toolkit for real-time image magic 👁️✨",
+    color: "#5c3ee8",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg",
   },
 };
 

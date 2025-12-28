@@ -28,12 +28,21 @@ import {
   SiJavascript,
   SiKubuntu,
   SiPm2,
-  SiPrettier,
+  
   SiTypescript,
   SiVercel,
   SiVisualstudiocode,
 } from "react-icons/si";
 import { VscCode } from "react-icons/vsc";
+
+import {
+  DiReact,
+  DiPython,
+  DiGit,
+  DiGithubBadge,
+  DiJavascript1,
+} from "react-icons/di";
+import { SiPowerbi, SiTailwindcss, SiMysql, SiOpencv } from "react-icons/si";
 
 // @ts-ignore
 import { Splide, SplideSlide } from "@splidejs/react-splide";
@@ -114,21 +123,51 @@ const TOOLS = [
     color: "#2496ed",
   },
   {
-    name: "NginX",
-    content: "Next.js is a React framework for production",
-    icon: <DiNginx size={"50px"} color="#008000" />,
-    color: "#008000",
+    name: "JavaScript",
+    content: "Core language for frontend and full-stack development",
+    icon: <DiJavascript1 size={"50px"} color="#F7DF1E" />,
+    color: "#F7DF1E",
   },
   {
-    name: "Vue.js",
-    content: "Next.js is a React framework for production",
-    icon: <FaVuejs size={"50px"} color="#41b883" />,
-    color: "#41b883",
+    name: "Python",
+    content: "Data analysis, automation, and AI development",
+    icon: <DiPython size={"50px"} color="#3776AB" />,
+    color: "#3776AB",
   },
   {
-    name: "Express.js",
-    content: "Next.js is a React framework for production",
-    icon: <SiExpress size={"50px"} color="#fff" />,
+    name: "Power BI",
+    content: "Interactive dashboards and business intelligence reporting",
+    icon: <SiPowerbi size={"50px"} color="#F2C811" />,
+    color: "#F2C811",
+  },
+  {
+    name: "SQL",
+    content: "Data querying, joins, and performance-optimized analysis",
+    icon: <SiMysql size={"50px"} color="#4479A1" />,
+    color: "#4479A1",
+  },
+  {
+    name: "Tailwind CSS",
+    content: "Utility-first CSS for responsive UI/UX design",
+    icon: <SiTailwindcss size={"50px"} color="#38BDF8" />,
+    color: "#38BDF8",
+  },
+  {
+    name: "OpenCV",
+    content: "Computer vision and image processing applications",
+    icon: <SiOpencv size={"50px"} color="#5C3EE8" />,
+    color: "#5C3EE8",
+  },
+  {
+    name: "Git",
+    content: "Version control and collaborative development",
+    icon: <DiGit size={"50px"} color="#F05032" />,
+    color: "#F05032",
+  },
+  {
+    name: "GitHub",
+    content: "Code hosting, collaboration, and CI workflows",
+    icon: <DiGithubBadge size={"50px"} color="#000000" />,
     color: "#000000",
   },
   {
@@ -174,18 +213,6 @@ const TOOLS = [
     color: "#007acc",
   },
   {
-    name: "VIM",
-    content: "Next.js is a React framework for production",
-    icon: <DiVim size={"50px"} color="#fff" />,
-    color: "#000000",
-  },
-  {
-    name: "Prettier",
-    content: "Next.js is a React framework for production",
-    icon: <SiPrettier size={"50px"} color="#f7b93c" />,
-    color: "#f7b93c",
-  },
-  {
     name: "NPM",
     content: "Next.js is a React framework for production",
     icon: <DiNpm size={"50px"} color="#CB3837" />,
@@ -207,13 +234,6 @@ const TOOLS = [
     name: "Linux",
     content: "Next.js is a React framework for production",
     icon: <FaLinux size={"50px"} color="#fff" />,
-    color: "#000000",
-  },
-  {
-    name: "Kubuntu",
-    content: "Next.js is a React framework for production",
-    // give me correct color for  kubuntu
-    icon: <SiKubuntu size={"50px"} color="#0077C4" />,
     color: "#000000",
   },
   {

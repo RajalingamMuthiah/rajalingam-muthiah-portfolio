@@ -222,6 +222,16 @@ const PROJECT_SKILLS = {
     fg: "white",
     icon: <SiSupabase />,
   },
+  mediaPipe: {
+    title: "MediaPipe",
+    bg: "black",
+    fg: "white",
+    icon: (
+      <span className="font-semibold" aria-label="MediaPipe">
+        MP
+      </span>
+    ),
+  },
 };
 export type Project = {
   id: string;
@@ -238,7 +248,7 @@ const projects: Project[] = [
   {
     id: "ai-codegen",
     category: "AI & ML",
-    title: "CodeGen AI",
+    title: "VIRTUAL WATCH AI",
     src: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=600&fit=crop",
     screenshots: ["1.png"],
     skills: {
@@ -254,18 +264,20 @@ const projects: Project[] = [
         PROJECT_SKILLS.python,
         PROJECT_SKILLS.postgres,
         PROJECT_SKILLS.express,
+        PROJECT_SKILLS.mediaPipe,
       ],
     },
-    live: "https://codegen-ai-demo.vercel.app",
-    github: "https://github.com/dummy/codegen-ai",
+    live: "https://github.com/RajalingamMuthiah/Real-Time-Hand-Tracking-Virtual-Watch-Overlay.git",
+    github: "https://github.com/RajalingamMuthiah/Real-Time-Hand-Tracking-Virtual-Watch-Overlay.git",
     get content() {
       return (
         <div>
           <TypographyP className="font-mono ">
-            CodeGen AI is an intelligent code generation platform that uses
-            advanced AI models to transform natural language into production-ready
-            code. Describe what you want to build, and watch as the AI crafts
-            elegant solutions across multiple programming languages and frameworks.
+            Developed a computer vision application using MediaPipe to detect and track hand landmarks and wrist coordinates from a live camera feed
+            Implemented real-time hand tracking and pose estimation to accurately overlay a virtual watch on the user’s wrist
+            Ensured precise alignment, scale adjustment, and smooth responsiveness of the virtual watch for an enhanced user experience
+            Optimized performance for low-latency real-time processing using Python-based CV pipelines
+
           </TypographyP>
           <ProjectsLinks live={this.live} repo={this.github} />
           <SlideShow
@@ -286,11 +298,11 @@ const projects: Project[] = [
   },
   {
     id: "blockchain-nft",
-    category: "Web3 & Blockchain",
-    title: "NeuralNFT Marketplace",
+    category: "Web3",
+    title: "Digital Animal care & Emergency Response Platform",
     src: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&h=600&fit=crop",
     screenshots: ["1.png", "2.png"],
-    live: "https://neural-nft-demo.vercel.app",
+    live: "https://github.com/RajalingamMuthiah",
     skills: {
       frontend: [
         PROJECT_SKILLS.ts,
@@ -309,10 +321,10 @@ const projects: Project[] = [
       return (
         <div>
           <TypographyP className="font-mono ">
-            NeuralNFT Marketplace is a next-generation NFT platform where digital
-            art meets blockchain technology. Mint, trade, and discover unique
-            generative art pieces powered by AI algorithms. Each NFT is a one-of-a-kind
-            creation with verifiable ownership on the blockchain.
+            Developed a full-stack digital platform connecting pet owners, 
+            veterinary doctors, and rescue teams to reduce response time in animal emergencies. 
+            Integrated Whatsapp API for instant alerts and implemented a Dialogflow chatbot 
+            for animal care recommendations and remote veterinary consultations. 
           </TypographyP>
           <ProjectsLinks live={this.live} repo={this.github} />
           <SlideShow
@@ -323,206 +335,207 @@ const projects: Project[] = [
           />
           <TypographyH3 className="my-4 mt-8">Blockchain Integration</TypographyH3>
           <p className="font-mono mb-2">
-            Seamless wallet connections, gas-optimized transactions, and real-time
-            trading. Built with Web3 standards to ensure security and interoperability
-            across the blockchain ecosystem.
+            Developed a full-stack digital platform connecting pet owners, 
+            veterinary doctors, and rescue teams to reduce response time in animal emergencies. 
+            Integrated Whatsapp API for instant alerts and implemented a Dialogflow chatbot 
+            for animal care recommendations and remote veterinary consultations. 
           </p>
         </div>
       );
     },
   },
-  {
-    id: "collab-whiteboard",
-    category: "Collaboration",
-    title: "SyncBoard",
-    src: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop",
-    screenshots: ["1.png", "2.png", "3.png"],
-    live: "https://syncboard-demo.vercel.app",
-    github: "https://github.com/dummy/syncboard",
-    skills: {
-      frontend: [
-        PROJECT_SKILLS.ts,
-        PROJECT_SKILLS.next,
-        PROJECT_SKILLS.react,
-        PROJECT_SKILLS.tailwind,
-        PROJECT_SKILLS.framerMotion,
-      ],
-      backend: [
-        PROJECT_SKILLS.node,
-        PROJECT_SKILLS.sockerio,
-        PROJECT_SKILLS.mongo,
-        PROJECT_SKILLS.express,
-      ],
-    },
-    get content() {
-      return (
-        <div>
-          <TypographyP className="font-mono ">
-            SyncBoard is a real-time collaborative whiteboard that brings teams
-            together across infinite canvas space. Draw, sketch, add sticky notes,
-            and collaborate seamlessly with cursor tracking, live cursors, and
-            conflict-free synchronized editing. Perfect for brainstorming, design
-            sessions, and remote collaboration.
-          </TypographyP>
-          <ProjectsLinks live={this.live} repo={this.github} />
-          <SlideShow
-            images={[
-              "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop",
-              "https://images.unsplash.com/photo-1557683316-973673baf926?w=800&h=600&fit=crop",
-            ]}
-          />
-          <TypographyH3 className="my-4 mt-8">Real-Time Collaboration</TypographyH3>
-          <p className="font-mono mb-2">
-            See what others are drawing in real-time with sub-100ms latency.
-            Built on operational transformation algorithms for smooth multi-user
-            editing. Zoom infinitely, pan seamlessly, and never lose your work.
-          </p>
-        </div>
-      );
-    },
-  },
-  {
-    id: "vr-visualizer",
-    category: "XR & Visualization",
-    title: "DimensionVR",
-    src: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=600&fit=crop",
-    screenshots: ["1.png"],
-    live: "https://dimension-vr-demo.vercel.app",
-    skills: {
-      frontend: [
-        PROJECT_SKILLS.ts,
-        PROJECT_SKILLS.next,
-        PROJECT_SKILLS.react,
-        PROJECT_SKILLS.spline,
-        PROJECT_SKILLS.tailwind,
-      ],
-      backend: [
-        PROJECT_SKILLS.node,
-        PROJECT_SKILLS.postgres,
-        PROJECT_SKILLS.prisma,
-      ],
-    },
-    get content() {
-      return (
-        <div>
-          <TypographyP className="font-mono ">
-            DimensionVR is a browser-based 3D visualization platform that transforms
-            data into immersive virtual experiences. Explore datasets in 3D space,
-            manipulate models with hand tracking, and share VR sessions with teammates.
-            No headset required—works in WebXR for desktop, mobile, and VR headsets.
-          </TypographyP>
-          <ProjectsLinks live={this.live} repo={this.github} />
-          <SlideShow
-            images={[
-              "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=600&fit=crop",
-              "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=600&fit=crop",
-            ]}
-          />
-          <TypographyH3 className="my-4 mt-8">WebXR Integration</TypographyH3>
-          <p className="font-mono mb-2">
-            Experience your data in true 3D. Import 3D models, visualize point clouds,
-            and interact with spatial data using WebXR APIs. Works seamlessly across
-            all devices with graceful fallbacks for non-VR environments.
-          </p>
-        </div>
-      );
-    },
-  },
-  {
-    id: "neural-playground",
-    category: "AI & ML",
-    title: "Neural Playground",
-    src: "https://images.unsplash.com/photo-1555255707-c07966088b7b?w=800&h=600&fit=crop",
-    screenshots: ["1.png", "2.png", "3.png", "4.png"],
-    live: "https://neural-playground-demo.vercel.app",
-    github: "https://github.com/dummy/neural-playground",
-    skills: {
-      frontend: [
-        PROJECT_SKILLS.ts,
-        PROJECT_SKILLS.react,
-        PROJECT_SKILLS.tailwind,
-        PROJECT_SKILLS.chakra,
-      ],
-      backend: [
-        PROJECT_SKILLS.node,
-        PROJECT_SKILLS.python,
-        PROJECT_SKILLS.mongo,
-        PROJECT_SKILLS.express,
-      ],
-    },
-    get content() {
-      return (
-        <div>
-          <TypographyP className="font-mono ">
-            Neural Playground is an interactive web-based tool for building,
-            training, and visualizing neural networks. Drag-and-drop layers, adjust
-            hyperparameters in real-time, and watch your network learn with live
-            visualization of weights, activations, and gradients. Perfect for education
-            and experimentation.
-          </TypographyP>
-          <ProjectsLinks live={this.live} repo={this.github} />
-          <SlideShow
-            images={[
-              "https://images.unsplash.com/photo-1555255707-c07966088b7b?w=800&h=600&fit=crop",
-              "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=600&fit=crop",
-            ]}
-          />
-          <TypographyH3 className="my-4 mt-8">Interactive Training</TypographyH3>
-          <p className="font-mono mb-2">
-            Visualize how neural networks learn. See activations flow through layers,
-            watch loss curves update in real-time, and experiment with different
-            architectures. Built with TensorFlow.js for browser-based computation.
-          </p>
-        </div>
-      );
-    },
-  },
-  {
-    id: "retro-emulator",
-    category: "Gaming",
-    title: "RetroArcade",
-    src: "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&h=600&fit=crop",
-    screenshots: ["1.png"],
-    live: "https://retroarcade-demo.vercel.app",
-    skills: {
-      frontend: [
-        PROJECT_SKILLS.js,
-        PROJECT_SKILLS.react,
-        PROJECT_SKILLS.next,
-        PROJECT_SKILLS.tailwind,
-        PROJECT_SKILLS.framerMotion,
-      ],
-      backend: [
-        PROJECT_SKILLS.node,
-        PROJECT_SKILLS.express,
-        PROJECT_SKILLS.firebase,
-      ],
-    },
-    get content() {
-      return (
-        <div>
-          <TypographyP className="font-mono ">
-            RetroArcade is a web-based emulator for classic arcade games from the
-            80s and 90s. Play original ROMs in your browser with authentic pixel-perfect
-            rendering, CRT shader effects, and controller support. Features include
-            save states, rewind functionality, and online leaderboards.
-          </TypographyP>
-          <ProjectsLinks live={this.live} repo={this.github} />
-          <SlideShow
-            images={[
-              "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&h=600&fit=crop",
-              "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&h=600&fit=crop",
-            ]}
-          />
-          <TypographyH3 className="my-4 mt-8">Classic Games Library</TypographyH3>
-          <p className="font-mono mb-2">
-            Play hundreds of retro titles with accurate emulation. Customizable
-            controls, CRT scanline effects, and authentic sound synthesis bring
-            the nostalgia of arcade gaming to your browser.
-          </p>
-        </div>
-      );
-    },
-  },
+  // {
+  //   id: "collab-whiteboard",
+  //   category: "Collaboration",
+  //   title: "SyncBoard",
+  //   src: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop",
+  //   screenshots: ["1.png", "2.png", "3.png"],
+  //   live: "https://syncboard-demo.vercel.app",
+  //   github: "https://github.com/dummy/syncboard",
+  //   skills: {
+  //     frontend: [
+  //       PROJECT_SKILLS.ts,
+  //       PROJECT_SKILLS.next,
+  //       PROJECT_SKILLS.react,
+  //       PROJECT_SKILLS.tailwind,
+  //       PROJECT_SKILLS.framerMotion,
+  //     ],
+  //     backend: [
+  //       PROJECT_SKILLS.node,
+  //       PROJECT_SKILLS.sockerio,
+  //       PROJECT_SKILLS.mongo,
+  //       PROJECT_SKILLS.express,
+  //     ],
+  //   },
+  //   get content() {
+  //     return (
+  //       <div>
+  //         <TypographyP className="font-mono ">
+  //           SyncBoard is a real-time collaborative whiteboard that brings teams
+  //           together across infinite canvas space. Draw, sketch, add sticky notes,
+  //           and collaborate seamlessly with cursor tracking, live cursors, and
+  //           conflict-free synchronized editing. Perfect for brainstorming, design
+  //           sessions, and remote collaboration.
+  //         </TypographyP>
+  //         <ProjectsLinks live={this.live} repo={this.github} />
+  //         <SlideShow
+  //           images={[
+  //             "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop",
+  //             "https://images.unsplash.com/photo-1557683316-973673baf926?w=800&h=600&fit=crop",
+  //           ]}
+  //         />
+  //         <TypographyH3 className="my-4 mt-8">Real-Time Collaboration</TypographyH3>
+  //         <p className="font-mono mb-2">
+  //           See what others are drawing in real-time with sub-100ms latency.
+  //           Built on operational transformation algorithms for smooth multi-user
+  //           editing. Zoom infinitely, pan seamlessly, and never lose your work.
+  //         </p>
+  //       </div>
+  //     );
+  //   },
+  // },
+  // {
+  //   id: "vr-visualizer",
+  //   category: "XR & Visualization",
+  //   title: "DimensionVR",
+  //   src: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=600&fit=crop",
+  //   screenshots: ["1.png"],
+  //   live: "https://dimension-vr-demo.vercel.app",
+  //   skills: {
+  //     frontend: [
+  //       PROJECT_SKILLS.ts,
+  //       PROJECT_SKILLS.next,
+  //       PROJECT_SKILLS.react,
+  //       PROJECT_SKILLS.spline,
+  //       PROJECT_SKILLS.tailwind,
+  //     ],
+  //     backend: [
+  //       PROJECT_SKILLS.node,
+  //       PROJECT_SKILLS.postgres,
+  //       PROJECT_SKILLS.prisma,
+  //     ],
+  //   },
+  //   get content() {
+  //     return (
+  //       <div>
+  //         <TypographyP className="font-mono ">
+  //           DimensionVR is a browser-based 3D visualization platform that transforms
+  //           data into immersive virtual experiences. Explore datasets in 3D space,
+  //           manipulate models with hand tracking, and share VR sessions with teammates.
+  //           No headset required—works in WebXR for desktop, mobile, and VR headsets.
+  //         </TypographyP>
+  //         <ProjectsLinks live={this.live} repo={this.github} />
+  //         <SlideShow
+  //           images={[
+  //             "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=600&fit=crop",
+  //             "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=600&fit=crop",
+  //           ]}
+  //         />
+  //         <TypographyH3 className="my-4 mt-8">WebXR Integration</TypographyH3>
+  //         <p className="font-mono mb-2">
+  //           Experience your data in true 3D. Import 3D models, visualize point clouds,
+  //           and interact with spatial data using WebXR APIs. Works seamlessly across
+  //           all devices with graceful fallbacks for non-VR environments.
+  //         </p>
+  //       </div>
+  //     );
+  //   },
+  // },
+  // {
+  //   id: "neural-playground",
+  //   category: "AI & ML",
+  //   title: "Neural Playground",
+  //   src: "https://images.unsplash.com/photo-1555255707-c07966088b7b?w=800&h=600&fit=crop",
+  //   screenshots: ["1.png", "2.png", "3.png", "4.png"],
+  //   live: "https://neural-playground-demo.vercel.app",
+  //   github: "https://github.com/dummy/neural-playground",
+  //   skills: {
+  //     frontend: [
+  //       PROJECT_SKILLS.ts,
+  //       PROJECT_SKILLS.react,
+  //       PROJECT_SKILLS.tailwind,
+  //       PROJECT_SKILLS.chakra,
+  //     ],
+  //     backend: [
+  //       PROJECT_SKILLS.node,
+  //       PROJECT_SKILLS.python,
+  //       PROJECT_SKILLS.mongo,
+  //       PROJECT_SKILLS.express,
+  //     ],
+  //   },
+  //   get content() {
+  //     return (
+  //       <div>
+  //         <TypographyP className="font-mono ">
+  //           Neural Playground is an interactive web-based tool for building,
+  //           training, and visualizing neural networks. Drag-and-drop layers, adjust
+  //           hyperparameters in real-time, and watch your network learn with live
+  //           visualization of weights, activations, and gradients. Perfect for education
+  //           and experimentation.
+  //         </TypographyP>
+  //         <ProjectsLinks live={this.live} repo={this.github} />
+  //         <SlideShow
+  //           images={[
+  //             "https://images.unsplash.com/photo-1555255707-c07966088b7b?w=800&h=600&fit=crop",
+  //             "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=600&fit=crop",
+  //           ]}
+  //         />
+  //         <TypographyH3 className="my-4 mt-8">Interactive Training</TypographyH3>
+  //         <p className="font-mono mb-2">
+  //           Visualize how neural networks learn. See activations flow through layers,
+  //           watch loss curves update in real-time, and experiment with different
+  //           architectures. Built with TensorFlow.js for browser-based computation.
+  //         </p>
+  //       </div>
+  //     );
+  //   },
+  // },
+  // {
+  //   id: "retro-emulator",
+  //   category: "Gaming",
+  //   title: "RetroArcade",
+  //   src: "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&h=600&fit=crop",
+  //   screenshots: ["1.png"],
+  //   live: "https://retroarcade-demo.vercel.app",
+  //   skills: {
+  //     frontend: [
+  //       PROJECT_SKILLS.js,
+  //       PROJECT_SKILLS.react,
+  //       PROJECT_SKILLS.next,
+  //       PROJECT_SKILLS.tailwind,
+  //       PROJECT_SKILLS.framerMotion,
+  //     ],
+  //     backend: [
+  //       PROJECT_SKILLS.node,
+  //       PROJECT_SKILLS.express,
+  //       PROJECT_SKILLS.firebase,
+  //     ],
+  //   },
+  //   get content() {
+  //     return (
+  //       <div>
+  //         <TypographyP className="font-mono ">
+  //           RetroArcade is a web-based emulator for classic arcade games from the
+  //           80s and 90s. Play original ROMs in your browser with authentic pixel-perfect
+  //           rendering, CRT shader effects, and controller support. Features include
+  //           save states, rewind functionality, and online leaderboards.
+  //         </TypographyP>
+  //         <ProjectsLinks live={this.live} repo={this.github} />
+  //         <SlideShow
+  //           images={[
+  //             "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&h=600&fit=crop",
+  //             "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&h=600&fit=crop",
+  //           ]}
+  //         />
+  //         <TypographyH3 className="my-4 mt-8">Classic Games Library</TypographyH3>
+  //         <p className="font-mono mb-2">
+  //           Play hundreds of retro titles with accurate emulation. Customizable
+  //           controls, CRT scanline effects, and authentic sound synthesis bring
+  //           the nostalgia of arcade gaming to your browser.
+  //         </p>
+  //       </div>
+  //     );
+  //   },
+  // },
 ];
 export default projects;
