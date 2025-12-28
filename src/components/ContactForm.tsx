@@ -34,14 +34,17 @@ const ContactForm = () => {
         }),
       });
       const data = await res.json();
-      if (data.error) throw new Error(data.error);
+      
+      if (!res.ok || data.error) {
+        throw new Error(data.error || "Failed to send email");
+      }
+      
       toast({
         title: "Thank you!",
         description: "I'll get back to you as soon as possible.",
         variant: "default",
         className: cn("top-0 mx-auto flex fixed md:top-4 md:right-4"),
       });
-      setLoading(false);
       setFullName("");
       setEmail("");
       setMessage("");
@@ -50,9 +53,10 @@ const ContactForm = () => {
         clearTimeout(timer);
       }, 1000);
     } catch (err) {
+      console.error("Form submission error:", err);
       toast({
         title: "Error",
-        description: "Something went wrong! Please check the fields.",
+        description: err instanceof Error ? err.message : "Something went wrong! Please try again.",
         className: cn(
           "top-0 w-full flex justify-center fixed md:max-w-7xl md:top-4 md:right-4"
         ),

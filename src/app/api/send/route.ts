@@ -52,10 +52,18 @@ export async function POST(req: Request) {
     });
 
     if (resendError) {
-      return Response.json({ error: resendError }, { status: 500 });
+      console.error("Resend error:", resendError);
+      return Response.json(
+        { 
+          error: typeof resendError === 'string' 
+            ? resendError 
+            : (resendError as any)?.message || "Failed to send email" 
+        },
+        { status: 500 }
+      );
     }
 
-    return Response.json(resendData);
+    return Response.json({ success: true, id: (resendData as any)?.id });
   } catch (error) {
     console.error("API route error:", error);
     return Response.json(
