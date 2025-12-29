@@ -41,17 +41,27 @@ function Page() {
         }),
       });
 
-      const result = await response.json();
+      let result: any = null;
+      const ct = response.headers.get("content-type") || "";
+      if (ct.includes("application/json")) {
+        try {
+          result = await response.json();
+        } catch (_e) {
+          // ignore parse errors; we'll handle via status below
+        }
+      }
 
-      if (response.ok && result?.success) {
+      if (response.ok && (result?.success ?? true)) {
         setStatus("success");
         setFeedback("✅ Message sent! Check your email for confirmation.");
         setFormData({ name: "", email: "", message: "" });
       } else {
         setStatus("error");
-        setFeedback(
-          result?.error || "❌ Failed to send. Please try again."
-        );
+        const msg =
+          result?.error ||
+          (await response.text()).slice(0, 300) ||
+          "❌ Failed to send. Please try again.";
+        setFeedback(msg);
       }
     } catch (error) {
       console.error("Contact form error", error);
