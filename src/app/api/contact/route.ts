@@ -5,44 +5,73 @@ export const dynamic = "force-dynamic";
 const ADMIN_EMAIL = "rajalingammathiah2011@gmail.com";
 
 export async function POST(req: Request) {
+  console.log("[CONTACT API] Request received");
+
   try {
     const apiKey = process.env.RESEND_API_KEY;
+    console.log("[CONTACT API] API Key present:", !!apiKey);
+
     if (!apiKey) {
-      return new Response(JSON.stringify({ success: false, error: "API key missing" }), {
-        status: 500,
-        headers: { "Content-Type": "application/json" },
-      });
+      console.error("[CONTACT API] RESEND_API_KEY not found in env");
+      return new Response(
+        JSON.stringify({ success: false, error: "RESEND_API_KEY not configured" }),
+        { status: 500, headers: { "Content-Type": "application/json" } }
+      );
     }
 
-    const body = await req.json();
+    let body;
+    try {
+      body = await req.json();
+      console.log("[CONTACT API] Body parsed:", { name: body.name, email: body.email, msgLen: body.message?.length });
+    } catch (parseErr) {
+      console.error("[CONTACT API] JSON parse failed:", parseErr);
+      return new Response(
+        JSON.stringify({ success: false, error: "Invalid JSON" }),
+        { status: 400, headers: { "Content-Type": "application/json" } }
+      );
+    }
+
     const { name, email, message } = body;
 
-    // Validate
     if (!name || !email || !message) {
-      return new Response(JSON.stringify({ success: false, error: "Missing fields" }), {
-        status: 400,
-        headers: { "Content-Type": "application/json" },
-      });
+      console.warn("[CONTACT API] Missing fields");
+      return new Response(
+        JSON.stringify({ success: false, error: "All fields required" }),
+        { status: 400, headers: { "Content-Type": "application/json" } }
+      );
     }
 
     if (message.length < 10) {
-      return new Response(JSON.stringify({ success: false, error: "Message too short" }), {
-        status: 400,
-        headers: { "Content-Type": "application/json" },
-      });
+      console.warn("[CONTACT API] Message too short:", message.length);
+      return new Response(
+        JSON.stringify({ success: false, error: "Message must be at least 10 characters" }),
+        { status: 400, headers: { "Content-Type": "application/json" } }
+      );
     }
 
+    console.log("[CONTACT API] Initializing Resend with key");
     const resend = new Resend(apiKey);
 
-    // Send admin notification
-    await resend.emails.send({
+    console.log("[CONTACT API] Sending admin email to", ADMIN_EMAIL);
+    const adminRes = await resend.emails.send({
       from: "onboarding@resend.dev",
       to: ADMIN_EMAIL,
       subject: `New Contact: ${name}`,
       html: `<p>From: ${name} (${email})</p><p>${message}</p>`,
     });
 
+    if (adminRes.error) {
+      console.error("[CONTACT API] Admin email failed:", adminRes.error);
+      return new Response(
+        JSON.stringify({ success: false, error: "Failed to send admin email" }),
+        { status: 500, headers: { "Content-Type": "application/json" } }
+      );
+    }
+
+    console.log("[CONTACT API] Admin email sent, ID:", adminRes.data?.id);
+
     // Send user confirmation (fire and forget)
+    console.log("[CONTACT API] Sending confirmation email to", email);
     resend.emails
       .send({
         from: "onboarding@resend.dev",
@@ -50,17 +79,19 @@ export async function POST(req: Request) {
         subject: `Message received, ${name}`,
         html: `<p>Thanks for reaching out. We'll be in touch soon!</p>`,
       })
-      .catch(() => {});
+      .then(() => console.log("[CONTACT API] Confirmation email sent"))
+      .catch((err) => console.error("[CONTACT API] Confirmation email failed:", err));
 
-    return new Response(JSON.stringify({ success: true }), {
+    console.log("[CONTACT API] Success response sent");
+    return new Response(JSON.stringify({ success: true, message: "Email sent! Check your inbox." }), {
       status: 200,
       headers: { "Content-Type": "application/json" },
     });
   } catch (err) {
-    console.error(err);
-    return new Response(JSON.stringify({ success: false, error: "Server error" }), {
-      status: 500,
-      headers: { "Content-Type": "application/json" },
-    });
+    console.error("[CONTACT API] Unhandled error:", err instanceof Error ? err.message : err);
+    return new Response(
+      JSON.stringify({ success: false, error: "Server error" }),
+      { status: 500, headers: { "Content-Type": "application/json" } }
+    );
   }
 }
